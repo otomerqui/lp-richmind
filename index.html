@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+      @keyframes scrolling {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    
+      .animate-scroll {
+        will-change: transform;
+        animation: scrolling 40s linear infinite;
+      }    
+      
+    </style>
+    
+</head>
+<body class="text-white p-4 sm:p-6 lg:p-10">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out px-8 sm:px-12 lg:px-16 pt-8 sm:pt-12 lg:pt-16">
+      <div class="flex items-center justify-between px-10 py-4 bg-[#101010B2] backdrop-blur-md rounded-3xl">
+          <div class="text-[#E2C473] font-medium text-xl flex">
+             <a href="index.html" class="flex"><img src="img/brain.webp" class="mr-2">
+              RICHMIND</a>
+          </div>
+          <!-- Menú en desktop -->
+          <nav class="hidden lg:flex space-x-6 font-[Inter]">
+              <a href="#" class="hover:text-[#d0b97c] hover:underline">Mentoría RichMind</a>
+              <a href="#" class="hover:text-[#d0b97c] hover:underline">Nuestra metodología</a>
+              <a href="#" class="hover:text-[#d0b97c] hover:underline">Nosotros</a>
+          </nav>
+          <div class="hidden lg:flex flex space-x-4">
+              <a class="bg-[#D0B97C] text-black px-4 py-2 rounded-lg hover:bg-[#e0c785] transition font-[Inter] cursor-pointer">
+                  Empezar
+              </a>
+              <a class="bg-[#ffffff33] border border-[#d0b97c] text-white px-4 py-2 rounded-lg hover:bg-[#e0c785] hover:text-black transition font-[Inter] cursor-pointer">
+                  Acceder
+              </a>
+          </div>
+          <!-- Botón para abrir el menú en móvil/tablet -->
+          <button id="menu-toggle" class="lg:hidden text-white text-2xl">
+            ☰
+          </button>
+      </div>
+      <!-- Menú lateral para móviles y tablets -->
+      <div id="mobile-menu" class="fixed top-0 right-0 h-full w-full md:w-[40vw] bg-black text-white transform translate-x-full transition-transform duration-500 py-6">
+        <div class="text-[#E2C473] font-medium text-xl flex px-4">
+          <img src="brain.webp" class="mr-2">
+           RICHMIND
+        </div>
+        <button id="close-menu" class="absolute top-4 right-4 text-white text-lg/[1] p-2 border rounded-md" style="border-color: #d0b97c;">✕</button>
+        <div class="flex flex-col mt-12">
+            <a href="#" class="block border-b p-4" style="border-color: #f1f1f169;">Mentoría RichMind</a>
+            <a href="#" class="block border-b p-4" style="border-color: #f1f1f169;">Nuestra metodología</a>
+            <a href="#" class="block border-b p-4" style="border-color: #f1f1f169;">Nosotros</a>
+            <a class="bg-[#ffffff33] border border-[#d0b97c] text-white px-4 py-2 mx-4 mt-6 mb-3 rounded-lg hover:bg-[#e0c785] hover:text-black transition font-[Inter] cursor-pointer">
+              Acceder
+            </a>
+            <a class="bg-[#D0B97C] text-black px-4 py-2 mx-4 mt-3 mb-6 rounded-lg hover:bg-yellow-500 transition font-[Inter] cursor-pointer">
+                Empezar
+            </a>
+        </div>
+      </div>
+    </header>    
+    <main>
+        <!-- Sección Hero -->
+        <div class="relative flex flex-col justify-end min-h-screen lg:min-h-[95vh] bg-cover bg-center rounded-3xl px-4 sm:px-10 pt-24 sm:pt-6 pb-6 md:pb-10 lg:pb-14 mb-20" style="background-image: url('img/hero-inicio.webp');">
+            <!-- Overlay oscuro -->
+            <div class="absolute inset-0 bg-black bg-opacity-50 rounded-3xl"></div>       
+
+
+            <!-- Contenido principal -->
+            <div class="flex flex-col lg:flex-row justify-between gap-10 lg:gap-0">        
+                <div class="z-10 flex flex-col items-start justify-center text-left text-white w-[100%] lg:w-[65%]">
+                    <h1 class="text-4xl md:text-6xl/[1.2] font-medium leading-tight lg:max-w-2xl mb-4">
+                        El primer paso para transformar tu realidad es creer en lo que puedes crear
+                    </h1>
+                    <p class="mt-4 text-lg lg:max-w-lg">
+                        Es tu voz interior la que te ha guiado hasta aquí. Tú eres quien crea tu vida. Aprende a manifestar desde tu esencia y convierte tus deseos en realidad.
+                    </p>
+                    <a class="mt-6 bg-[#D0B97C] text-black px-4 py-2 rounded-lg hover:bg-[#e0c785] transition font-medium font-[Inter] cursor-pointer">
+                        Empieza ahora
+                    </a>
+                </div>
+                <div class="flex flex-col justify-end z-10">
+                    <!-- Tarjeta -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden max-w-[321px] border border-[2px] border-[#D0B97C]">
+                        <img src="img/hero-mini.webp" alt="Conócenos" class="w-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección benificios -->
+        <section class="mb-20">
+          <!-- Encabezado -->
+          <div class="flex flex-col items-center text-center max-w-2xl mx-auto">
+            <!-- Tag -->
+            <div class="flex items-center px-2 py-1 bg-[#F8F6ED] rounded-3xl w-fit">
+              <span class="text-[#BAAA8F] text-sm/[1.2] uppercase">Beneficios</span>
+            </div>
+              <h2 class="text-3xl md:text-6xl/[1.2] text-gray-900 font-medium mb-4">Qué lograrás con RichMind</h2>
+              <p class="text-gray-500">
+                  Accede a las herramientas para transformar tu vida y manifestar tus deseos con claridad, confianza y propósito.
+              </p>
+          </div>
+      
+          <!-- Contenido en dos columnas -->
+          <div class="mt-12 flex flex-col md:flex-row gap-4">
+              <!-- Imagen -->
+              <div class="md:basis-[55%] bg-cover bg-center rounded-3xl min-h-[440px]" style="background-image: url('img/img-beneficios.webp');">                
+              </div>
+      
+              <!-- Lista de Beneficios -->
+              <div class="bg-yellow-50 px-4 py-6 sm:py-10 sm:px-10 rounded-2xl shadow-lg md:basis-[45%]">
+                  <ul class="space-y-6">
+                      <li class="flex items-start">
+                          <img src="img/icon-hands.svg" class="mr-4">
+                          <div>
+                              <h3 class="font-medium text-black text-lg">Autoconfianza</h3>
+                              <p class="text-gray-600 text-sm">Aprende a autoconocerte y a conectar con tu verdadero ser.</p>
+                          </div>
+                      </li>
+                      <li class="flex items-start">
+                          <img src="img/icon-hands.svg" class="mr-4">
+                          <div>
+                              <h3 class="font-medium text-black  text-lg">Bienestar integral</h3>
+                              <p class="text-gray-600 text-sm">Integra herramientas prácticas para crear una vida consciente.</p>
+                          </div>
+                      </li>
+                      <li class="flex items-start">
+                          <img src="img/icon-hands.svg" class="mr-4">
+                          <div>
+                              <h3 class="font-medium text-black  text-lg">Crecimiento personal</h3>
+                              <p class="text-gray-600 text-sm">Transforma tus bloqueos en oportunidades de crecimiento.</p>
+                          </div>
+                      </li>
+                      <li class="flex items-start">
+                          <img src="img/icon-hands.svg" class="mr-4">
+                          <div>
+                              <h3 class="font-medium text-black  text-lg">Acción consciente</h3>
+                              <p class="text-gray-600 text-sm">Eleva tu conciencia y toma acciones alineadas con tus deseos.</p>
+                          </div>
+                      </li>
+                      <li class="flex items-start">
+                          <img src="img/icon-hands.svg" class="mr-4">
+                          <div>
+                              <h3 class="font-medium text-black  text-lg">Claridad mental</h3>
+                              <p class="text-gray-600 text-sm">Aprende a tener claridad y avanza con confianza.</p>
+                          </div>
+                      </li>
+                      <li class="flex items-start">
+                          <img src="img/icon-hands.svg" class="mr-4">
+                          <div>
+                              <h3 class="font-medium text-black  text-lg">Herramientas de manifestación</h3>
+                              <p class="text-gray-600 text-sm">Accede a técnicas avanzadas para transformar tu realidad.</p>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          
+        </section>
+
+         <!-- Sección carrousel -->       
+         <section class="flex flex-col justify-center items-center mb-20">
+          <!-- Encabezado --> 
+          <div class="flex flex-col items-center text-center max-w-2xl mx-auto">
+            <!-- Tag -->
+            <div class="flex items-center px-2 py-1 bg-[#F8F6ED] rounded-3xl w-fit">
+              <span class="text-[#BAAA8F] text-sm/[1.2] uppercase">Activa tu poder interior</span>
+            </div>
+            <h2 class="text-3xl md:text-6xl/[1.2] text-gray-900 font-medium mb-4">La realidad que deseas ya esta dentro de ti</h2>
+            <p class="text-gray-500">
+                conecta con tu esencia, despiesta tu energía creadora.
+            </p>
+        </div>
+          <div id="carousel" class="mx-auto mt-12 w-full overflow-hidden flex">
+            <div class="group flex gap-5 pr-5 animate-scroll">
+              <!-- Card -->
+              <div class=" w-[470px] min-h-[60vh] relative rounded-3xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('img/carrusel-1.webp');">             
+
+                <!-- Etiqueta superior -->
+                <div class="absolute top-4 left-4 bg-white text-gray-700 text-sm px-4 py-2 rounded-full shadow-md flex items-center gap-2">
+                  <img src="img/icon-seed.svg">
+                  Manifiesta el propósito que guía tu vida
+                </div>
+
+                <!-- Contenido -->
+                <div class="absolute bottom-4 left-4 right-4 bg-white bg-opacity-80 backdrop-blur-md rounded-2xl p-5 shadow-md">
+                  <h3 class="text-gray-900 font-bold text-lg">
+                    ¿Cómo sería tu vida si tus acciones estuvieran alineadas con tu propósito?
+                  </h3>
+                  <p class="text-gray-700 text-sm mt-2">
+                    Tu propósito da sentido a tu vida. Te acompañamos a descubrirlo, definir tus metas, reconectar con tus valores y vivir desde tu esencia con plenitud.
+                  </p>
+                </div>
+              </div>
+              <!-- Card -->
+              <div class=" w-[370px] min-h-[60vh] relative rounded-3xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('img/carrusel-2.webp');">             
+
+                <!-- Etiqueta superior -->
+                <div class="absolute top-4 left-4 bg-white text-gray-700 text-sm px-4 py-2 rounded-full shadow-md flex items-center gap-2">
+                  <img src="img/icon-seed.svg">
+                  Manifiesta el propósito que guía tu vida
+                </div>
+
+                <!-- Contenido -->
+                <div class="absolute bottom-4 left-4 right-4 bg-white bg-opacity-80 backdrop-blur-md rounded-2xl p-5 shadow-md">
+                  <h3 class="text-gray-900 font-bold text-lg">
+                    ¿Cómo sería tu vida si tus acciones estuvieran alineadas con tu propósito?
+                  </h3>
+                  <p class="text-gray-700 text-sm mt-2">
+                    Tu propósito da sentido a tu vida. Te acompañamos a descubrirlo, definir tus metas, reconectar con tus valores y vivir desde tu esencia con plenitud.
+                  </p>
+                </div>
+              </div>
+              <!-- Card -->
+              <div class=" w-[470px] min-h-[60vh] relative rounded-3xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('img/carrusel-3.webp');">             
+
+                <!-- Etiqueta superior -->
+                <div class="absolute top-4 left-4 bg-white text-gray-700 text-sm px-4 py-2 rounded-full shadow-md flex items-center gap-2">
+                  <img src="img/icon-seed.svg">
+                  Manifiesta el propósito que guía tu vida
+                </div>
+
+                <!-- Contenido -->
+                <div class="absolute bottom-4 left-4 right-4 bg-white bg-opacity-80 backdrop-blur-md rounded-2xl p-5 shadow-md">
+                  <h3 class="text-gray-900 font-bold text-lg">
+                    ¿Cómo sería tu vida si tus acciones estuvieran alineadas con tu propósito?
+                  </h3>
+                  <p class="text-gray-700 text-sm mt-2">
+                    Tu propósito da sentido a tu vida. Te acompañamos a descubrirlo, definir tus metas, reconectar con tus valores y vivir desde tu esencia con plenitud.
+                  </p>
+                </div>
+              </div>
+              <!-- Card -->
+              <div class=" w-[370px] min-h-[60vh] relative rounded-3xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('img/carrusel-4.webp');">             
+
+                <!-- Etiqueta superior -->
+                <div class="absolute top-4 left-4 bg-white text-gray-700 text-sm px-4 py-2 rounded-full shadow-md flex items-center gap-2">
+                  <img src="img/icon-seed.svg">
+                  Manifiesta el propósito que guía tu vida
+                </div>
+
+                <!-- Contenido -->
+                <div class="absolute bottom-4 left-4 right-4 bg-white bg-opacity-80 backdrop-blur-md rounded-2xl p-5 shadow-md">
+                  <h3 class="text-gray-900 font-bold text-lg">
+                    ¿Cómo sería tu vida si tus acciones estuvieran alineadas con tu propósito?
+                  </h3>
+                  <p class="text-gray-700 text-sm mt-2">
+                    Tu propósito da sentido a tu vida. Te acompañamos a descubrirlo, definir tus metas, reconectar con tus valores y vivir desde tu esencia con plenitud.
+                  </p>
+                </div>
+              </div>
+            </div>
+      
+            <div aria-hidden="true" class="group flex gap-5 pr-5 animate-scroll">
+              <!-- Card -->
+              <div class=" w-[470px] min-h-[60vh] relative rounded-3xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('img/carrusel-1.webp');">             
+
+                <!-- Etiqueta superior -->
+                <div class="absolute top-4 left-4 bg-white text-gray-700 text-sm px-4 py-2 rounded-full shadow-md flex items-center gap-2">
+                  <img src="img/icon-seed.svg">
+                  Manifiesta el propósito que guía tu vida
+                </div>
+
+                <!-- Contenido -->
+                <div class="absolute bottom-4 left-4 right-4 bg-white bg-opacity-80 backdrop-blur-md rounded-2xl p-5 shadow-md">
+                  <h3 class="text-gray-900 font-bold text-lg">
+                    ¿Cómo sería tu vida si tus acciones estuvieran alineadas con tu propósito?
+                  </h3>
+                  <p class="text-gray-700 text-sm mt-2">
+                    Tu propósito da sentido a tu vida. Te acompañamos a descubrirlo, definir tus metas, reconectar con tus valores y vivir desde tu esencia con plenitud.
+                  </p>
+                </div>
+              </div>
+              <!-- Card -->
+              <div class=" w-[370px] min-h-[60vh] relative rounded-3xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('img/carrusel-2.webp');">             
+
+                <!-- Etiqueta superior -->
+                <div class="absolute top-4 left-4 bg-white text-gray-700 text-sm px-4 py-2 rounded-full shadow-md flex items-center gap-2">
+                  <img src="img/icon-seed.svg">
+                  Manifiesta el propósito que guía tu vida
+                </div>
+
+                <!-- Contenido -->
+                <div class="absolute bottom-4 left-4 right-4 bg-white bg-opacity-80 backdrop-blur-md rounded-2xl p-5 shadow-md">
+                  <h3 class="text-gray-900 font-bold text-lg">
+                    ¿Cómo sería tu vida si tus acciones estuvieran alineadas con tu propósito?
+                  </h3>
+                  <p class="text-gray-700 text-sm mt-2">
+                    Tu propósito da sentido a tu vida. Te acompañamos a descubrirlo, definir tus metas, reconectar con tus valores y vivir desde tu esencia con plenitud.
+                  </p>
+                </div>
+              </div>
+              <!-- Card -->
+              <div class=" w-[470px] min-h-[60vh] relative rounded-3xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('img/carrusel-3.webp');">             
+
+                <!-- Etiqueta superior -->
+                <div class="absolute top-4 left-4 bg-white text-gray-700 text-sm px-4 py-2 rounded-full shadow-md flex items-center gap-2">
+                  <img src="img/icon-seed.svg">
+                  Manifiesta el propósito que guía tu vida
+                </div>
+
+                <!-- Contenido -->
+                <div class="absolute bottom-4 left-4 right-4 bg-white bg-opacity-80 backdrop-blur-md rounded-2xl p-5 shadow-md">
+                  <h3 class="text-gray-900 font-bold text-lg">
+                    ¿Cómo sería tu vida si tus acciones estuvieran alineadas con tu propósito?
+                  </h3>
+                  <p class="text-gray-700 text-sm mt-2">
+                    Tu propósito da sentido a tu vida. Te acompañamos a descubrirlo, definir tus metas, reconectar con tus valores y vivir desde tu esencia con plenitud.
+                  </p>
+                </div>
+              </div>
+              <!-- Card -->
+              <div class=" w-[370px] min-h-[60vh] relative rounded-3xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('img/carrusel-4.webp');">             
+
+                <!-- Etiqueta superior -->
+                <div class="absolute top-4 left-4 bg-white text-gray-700 text-sm px-4 py-2 rounded-full shadow-md flex items-center gap-2">
+                  <img src="img/icon-seed.svg">
+                  Manifiesta el propósito que guía tu vida
+                </div>
+
+                <!-- Contenido -->
+                <div class="absolute bottom-4 left-4 right-4 bg-white bg-opacity-80 backdrop-blur-md rounded-2xl p-5 shadow-md">
+                  <h3 class="text-gray-900 font-bold text-lg">
+                    ¿Cómo sería tu vida si tus acciones estuvieran alineadas con tu propósito?
+                  </h3>
+                  <p class="text-gray-700 text-sm mt-2">
+                    Tu propósito da sentido a tu vida. Te acompañamos a descubrirlo, definir tus metas, reconectar con tus valores y vivir desde tu esencia con plenitud.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    
+        <!-- Sección metodologia -->
+        <section class="flex flex-col lg:flex-row justify-between items-center gap-20 bg-[#101010] backdrop-blur-md rounded-3xl px-4 sm:px-10 py-6 sm:py-10 mb-20">
+          <!-- Contenedor Izquierdo -->
+          <div class="flex flex-col items-start gap-6 w-[100%] lg:w-[41%]">
+            <!-- Tag -->
+            <div class="flex items-center px-2 py-1 bg-[#F8F6ED] rounded-3xl">
+              <span class="text-[#BAAA8F] text-sm/[1.2] uppercase">Metodología</span>
+            </div>
+        
+            <!-- Título -->
+            <h2 class="text-3xl md:text-6xl/[1.2] text-white font-medium">
+              Sentir, creer y manifestar desde el Alma
+            </h2>
+        
+            <!-- Descripción -->
+            <p class="text-white text-base leading-6">
+              La metodología de RichMind combina psicoterapia integrativa, pedagogía aplicada y una gran variedad de disciplinas terapéuticas para transformar tu mentalidad y guiarte hacia tus objetivos de manera clara y enfocada...
+            </p>
+        
+            <!-- Botón -->
+            <a class="px-4 py-2 bg-[#D0B97C] hover:bg-[#e0c785] font-medium rounded-lg text-[#101010] text-base cursor-pointer">
+              Descubre más
+            </a>
+          </div>
+        
+          <!-- Contenedor Derecho -->
+          <div class="flex flex-col-reverse md:flex-row justify-end w-[100%] lg:w-[59%] relative gap-6 md:gap-0">
+            <!-- Tarjetas -->
+            <div class="flex flex-col gap-4 md:absolute md:left-[10%] bottom-[5%] lg:left-0 w-full md:max-w-[314px]">
+              <div class="p-4 bg-[#F8F6ED] rounded-3xl">
+                <div class="flex items-center gap-2">
+                  <img src="img/icon-brain.svg">
+                  <h3 class="text-[#101010] font-bold text-base">Enfoque Integrativo</h3>
+                </div>
+                <p class="text-[#101010] text-sm">
+                  Trabajamos cuerpo, mente, emociones, energía y Alma.
+                </p>
+              </div>
+              <div class="p-4 bg-[#F8F6ED] rounded-3xl">
+                <div class="flex items-center gap-2">
+                  <img src="img/icon-brain.svg">
+                  <h3 class="text-[#101010] font-bold text-base">Metodología probada</h3>
+                </div>
+                <p class="text-[#101010] text-sm">
+                  Un método probado que, al tomar tu responsabilidad y seguir el proceso, te llevará a los resultados que deseas.
+                </p>
+              </div>
+              <div class="p-4 bg-[#F8F6ED] rounded-3xl">
+                <div class="flex items-center gap-2">
+                  <img src="img/icon-brain.svg">
+                  <h3 class="text-[#101010] font-bold text-base">Resultados conscientes</h3>
+                </div>
+                <p class="text-[#101010] text-sm">
+                  Descubre herramientas que podrás aplicar en tu vida para transformarla de manera consciente.
+                </p>
+              </div>
+            </div>
+        
+            <!-- Imagen -->
+            <div class="flex flex-row justify-center md:justify-end 2xl:justify-center w-full"><img src="img/metodologia.webp" alt="Meditación" class="w-[537px] h-[400px] sm:h-[572px] lg:h-[656px] rounded-2xl shadow-lg object-cover"></div>
+          </div>
+        </section>
+        <!-- Sección descubre la mentoria -->
+        <section class="w-full bg-white mb-16">
+          <!-- Encabezado -->
+          <div class="flex flex-col items-center text-center max-w-2xl mx-auto">
+            <!-- Tag -->
+            <div class="flex items-center px-2 py-1 bg-[#F8F6ED] rounded-3xl w-fit">
+              <span class="text-[#BAAA8F] text-sm/[1.2] uppercase">Mentoría RichMind</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mt-4 leading-tight">
+              Diseña tu realidad, <br> transforma tu vida
+            </h1>
+          </div>
+        
+          <!-- Imagen con texto superpuesto -->          
+          <div class="mt-12 bg-cover bg-center rounded-3xl h-[70vh] flex justify-end items-end px-4 py-6 sm:px-10 sm:py-10" style="background-image: url('img/mentoria.webp');">
+            <div class="text-white max-w-lg flex flex-col items-end">
+              <p class="text-lg md:text-2xl font-light text-right">
+                Descubre la mentoría exclusiva de RichMind diseñada para transformar tu mentalidad y ayudarte a manifestar la vida que deseas.
+              </p>
+              <a href="#" class="mt-4 inline-block bg-[#D0B97C] text-black font-medium py-2 px-4 rounded-lg shadow-md hover:bg-[#e0c785] transition cursor-pointer">
+                Descubre la Mentoría RichMind
+              </a>
+            </div>
+          </div>
+        
+          <!-- Beneficios -->
+          <div class="mx-auto grid md:grid-cols-3 gap-8 md:gap-14 mt-10 text-gray-700">
+            <div class="flex flex-col items-start">
+              <h3 class="text-lg font-semibold">Metodología integrativa</h3>
+              <p class="text-sm mt-2">
+                Una mentoría transformadora que integra diversas disciplinas y estrategias para guiarte en tu autodescubrimiento y manifestar cambios profundos en tu vida.
+              </p>
+            </div>
+            <div class="flex flex-col items-start">
+              <h3 class="text-lg font-semibold">Atención personalizada y acompañamiento grupal</h3>
+              <p class="text-sm mt-2">
+                Ofrecemos videollamadas grupales para resolver dudas de forma personalizada y compartir perspectivas de comunidad, además de sesiones individuales enfocadas en tus necesidades y desafíos.
+              </p>
+            </div>
+            <div class="flex flex-col items-start">
+              <h3 class="text-lg font-semibold">Acceso permanente</h3>
+              <p class="text-sm mt-2">
+                Tendrás acceso a todas las lecciones, materiales del curso y a la comunidad para compartir experiencias o volver a revisar el contenido siempre que lo desees.
+              </p>
+            </div>
+          </div>
+        </section>  
+ 
+    </main> 
+     <!-- footer -->
+    <footer class="bg-black text-white py-10 px-4 rounded-3xl">
+        <div class="flex flex-col text-center">
+          <img src="img/brain-64.webp" alt="BrightMind Logo" class="mx-auto w-[48px]">
+          <p class="mb-4 text-[#E2C473] text-xl">RICHMIND</p>
+          <nav class="mb-4">
+            <ul class="flex flex-col md:flex-row gap-2 md:gap-0 justify-center md:space-x-6 text-base">
+              <li><a href="#" class="hover:text-[#D0B97C]">Mentoría RichMind</a></li>
+              <li><a href="#" class="hover:text-[#D0B97C]">Nuestra metodología</a></li>
+              <li><a href="#" class="hover:text-[#D0B97C]">Nosotros</a></li>
+              <li><a href="#" class="hover:text-[#D0B97C]">Contacto</a></li>
+            </ul>
+          </nav>          
+          <hr class="border-t border-gray-600 my-4">
+          <div class="flex flex-col md:flex-row gap-2 md:gap-0 justify-between">
+            <p class="text-sm">&copy; 2025 RichMind | Desarrollado por Oto Mercado</p>
+            <p class="text-sm">
+                <a href="#" class="hover:text-[#D0B97C]">Política de Cookies</a> |
+                <a href="#" class="hover:text-[#D0B97C]">Aviso Legal</a> |
+                <a href="#" class="hover:text-[#D0B97C]">Política de Privacidad</a>
+            </p>
+          </div>
+          
+        </div>
+    </footer>    
+    
+</body>
+<script src="index.js"></script>     
+</html>
